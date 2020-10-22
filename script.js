@@ -16,12 +16,13 @@ updateDeaths();
 updateKd();
 updateDays();
 
+repeatedlyUpdateBotNum();
 repeatedlyUpdateKills();
 repeatedlyUpdateDeaths();
 
 function updateBotNum() {
-   var currentTimeOfDay = new Date().getHours();
-   var botNum =  botNum = AVG_BOT_NUM + 3 * ((currentTimeOfDay % 4) - 2);
+   var currentTimeOfDay = new Date().getMinutes();
+   var botNum =  botNum = AVG_BOT_NUM + 4 * ((currentTimeOfDay % 4) - 2);
    botNumElement.textContent = botNum;
 }
 
@@ -46,7 +47,11 @@ function updateDays() {
    daysElement.textContent = daysSinceRelease.toFixed(2);
 }
 
-
+function repeatedlyUpdateBotNum()  {
+    setInterval(function() {
+      updateBotNum();
+    }, 1000 * 60);
+}
 
 function repeatedlyUpdateKills()  {
     var killDelay = (2 + Math.random()) * 1000;
