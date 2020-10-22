@@ -18,6 +18,7 @@ updateDays();
 
 setInterval(function() {
   updateFrags();
+  updateDeaths();
 }, 2000)
 
 function updateBotNum() {
