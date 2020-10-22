@@ -17,7 +17,7 @@ updateKd();
 updateDays();
 
 setInterval(function() {
-  updateFrags();
+  updateKills();
   updateDeaths();
 }, 2000)
 
