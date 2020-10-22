@@ -44,7 +44,7 @@ function updateKd() {
 }
 
 function updateDays() {
-   var daysSinceRelease =  (releaseDate - Date.now()) / 24 / 60 / 60 / 1000;
+   var daysSinceRelease =  (Date.now() - releaseDate) / 24 / 60 / 60 / 1000;
    daysElement.textContent = daysSinceRelease.toFixed(2);
 }
 
