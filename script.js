@@ -29,13 +29,13 @@ function updateBotNum() {
 function updateKills() {
    var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
    var kills = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
-   killsElement.textContent = kills.toFixed(2);
+   killsElement.textContent = kills.toFixed(0);
 }
 
 function updateDeaths() {
    var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
    var deaths = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM / AVG_KD;
-   fragsElement.textContent = deaths.toFixed(2);
+   fragsElement.textContent = deaths.toFixed(0);
 }
 
 function updateKd() {
