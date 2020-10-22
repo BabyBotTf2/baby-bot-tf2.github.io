@@ -72,7 +72,7 @@ body {
     height: 21.48vh;
     position: absolute;
     filter: hue-rotate(133deg) brightness(0.8) contrast(3) saturate(2);
-    animation: grow-shrink 10s;
+    animation: grow-shrink 45s;
 }
 
 @keyframes scroll-1 {
