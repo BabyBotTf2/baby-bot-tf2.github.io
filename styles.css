@@ -56,6 +56,16 @@ body {
 	z-index: 1;
 }
 
+#brain {
+    background-image: url(https://www.flaticon.com/svg/static/icons/svg/883/883039.svg);
+    z-index: 3;
+    background-size: cover;
+    width: 13%;
+    height: 21%;
+    position: absolute;
+    margin: auto;	
+}
+
 @keyframes scroll-1 {
 	0% {
 		background-position: 0% 40%;
