@@ -57,13 +57,14 @@ body {
 }
 
 #brain {
-    background-image: url(https://www.flaticon.com/svg/static/icons/svg/883/883039.svg);
+    background-image: url(https://www.flaticon.com/svg/static/icons/svg/3576/3576226.svg);
     z-index: 3;
     background-size: cover;
-    width: 13%;
-    height: 21%;
+    width: 15%;
+    height: 17.3%;
     position: absolute;
-    margin: auto;	
+    margin: 13% 44%;
+    filter: hue-rotate(133deg) brightness(0.8) contrast(3) saturate(2);
 }
 
 @keyframes scroll-1 {
