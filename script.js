@@ -1,26 +1,41 @@
 var KILL_RATE = 71; // per hour
 var AVG_BOT_NUM = 1029;
+var releaseDate = new Date(2020, 9, 22, 12, 0, 0, 0);
 
 var botNumElement = document.getElementById('bot-num');
 var fragsElement = document.getElementById('frags');
 var daysElement = document.getElementById('days');
 var ndcgElement = document.getElementById('ndcg');
 
-var hoursSinceRelease = hoursDiff(Date.now(), new Date(2020, 9, 22, 12, 0, 0, 0)));
-var currentTimeOfDay = new Date().getHours();
-
-var botNum = AVG_BOT_NUM + 3 * ((currentTimeOfDay % 4) - 2);
+var botNum;
 var frags;
+var daysTraining;
+updateBotNum();
 updateFrags();
+updateDaysTraining();
 
 setInterval(function() {
   updateFrags();
 }, 2000)
 
+function updateBotNum() {
+   var currentTimeOfDay = new Date().getHours();
+   frags =  botNum = AVG_BOT_NUM + 3 * ((currentTimeOfDay % 4) - 2);
+   botNumElement.textContent = frags;
+}
+
 function updateFrags() {
+   var hoursSinceRelease = hoursDiff(Date.now(), releaseDate);
    frags = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
    fragsElement.textContent = frags;
 }
+
+function updateDaysTraining() {
+   var daysSinceRelease = daysDiff(Date.now(), releaseDate);
+   fragsElement.textContent = daysSinceRelease;
+}
+
+
 
 function secondsDiff(d1, d2) {
    let millisecondDiff = d2 - d1;
@@ -38,4 +53,10 @@ function hoursDiff(d1, d2) {
    let minutes = minutesDiff(d1, d2);
    let hoursDiff = Math.floor( minutes / 60 );
    return hoursDiff;
+}
+
+function daysDiff(d1, d2) {
+   let hours = hoursDiff(d1, d2);
+   let daysDiff = Math.floor( hours / 24 );
+   return daysDiff;
 }
