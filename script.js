@@ -1,5 +1,5 @@
 var KILL_RATE = 71; // per hour
-var AVG_BOT_NUM = 1029;
+var AVG_BOT_NUM = 1028;
 var releaseDate = new Date(2020, 9, 22, 12, 0, 0, 0);
 
 var botNumElement = document.getElementById('bot-num');
@@ -12,7 +12,7 @@ var frags;
 var daysTraining;
 updateBotNum();
 updateFrags();
-updateDaysTraining();
+updateDays();
 
 setInterval(function() {
   updateFrags();
@@ -30,9 +30,9 @@ function updateFrags() {
    fragsElement.textContent = frags;
 }
 
-function updateDaysTraining() {
+function updateDays() {
    var daysSinceRelease = daysDiff(Date.now(), releaseDate);
-   fragsElement.textContent = daysSinceRelease;
+   daysElement.textContent = daysSinceRelease;
 }
 
 
