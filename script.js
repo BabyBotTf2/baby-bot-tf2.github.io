@@ -25,7 +25,7 @@ function updateBotNum() {
 }
 
 function updateFrags() {
-   var hoursSinceRelease = hoursDiff(Date.now(), releaseDate);
+   var hoursSinceRelease = (Date.now() - releaseDate) / 60 / 60 / 1000;
    frags = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
    fragsElement.textContent = frags;
 }
