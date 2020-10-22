@@ -17,8 +17,7 @@ updateKd();
 updateDays();
 
 repeatedlyUpdateBotNum();
-repeatedlyUpdateKills();
-repeatedlyUpdateDeaths();
+repeatedlyUpdateKillsDeaths();
 
 function updateBotNum() {
    var currentTimeOfDay = new Date().getMinutes();
@@ -53,23 +52,14 @@ function repeatedlyUpdateBotNum()  {
     }, 1000 * 60);
 }
 
-function repeatedlyUpdateKills()  {
+function repeatedlyUpdateKillsDeaths()  {
     var killDelay = (2 + Math.random()) * 1000;
     setTimeout(function() {
       updateKills();
-      repeatedlyUpdateKills();
+      updateDeaths();
+      repeatedlyUpdateKillsDeaths();
     }, killDelay);
 }
-
-function repeatedlyUpdateDeaths()  {
-    var deathDelay = (2 + Math.random()) * 1000;
-    setTimeout(function() {
-      updateDeaths();
-      repeatedlyUpdateDeaths();
-    }, deathDelay);
-}
-
-
 
 
 function secondsDiff(d1, d2) {
