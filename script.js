@@ -25,13 +25,13 @@ function updateBotNum() {
 }
 
 function updateFrags() {
-   var hoursSinceRelease = (Date.now() - releaseDate) / 60 / 60 / 1000;
+   var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
    frags = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
    fragsElement.textContent = frags;
 }
 
 function updateDays() {
-   var daysSinceRelease =  (Date.now() - releaseDate) / 24 / 60 / 60 / 1000;
+   var daysSinceRelease =  (releaseDate - Date.now()) / 24 / 60 / 60 / 1000;
    daysElement.textContent = daysSinceRelease.toFixed(2);
 }
 
