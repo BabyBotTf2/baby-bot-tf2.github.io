@@ -69,10 +69,10 @@ body {
     z-index: 3;
     background-size: cover;
     width: 30vh;
-    height: 21.48vh;
+    height: 21.41vh;
     position: absolute;
     filter: hue-rotate(133deg) brightness(0.8) contrast(3) saturate(2);
-    animation: grow-shrink 45s;
+    animation: grow-shrink 45s infinite;
 }
 
 @keyframes scroll-1 {
