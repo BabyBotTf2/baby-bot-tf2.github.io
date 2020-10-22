@@ -1,17 +1,19 @@
 var KILL_RATE = 71; // per hour
 var AVG_BOT_NUM = 1028;
+var AVG_KD = 1.634;
 var releaseDate = new Date(2020, 9, 22, 12, 0, 0, 0);
 
 var botNumElement = document.getElementById('bot-num');
-var fragsElement = document.getElementById('frags');
+var killsElement = document.getElementById('kills');
+var deathsElement = document.getElementById('deaths');
+var kdElement = document.getElementById('kd');
 var daysElement = document.getElementById('days');
 var ndcgElement = document.getElementById('ndcg');
 
-var botNum;
-var frags;
-var daysTraining;
 updateBotNum();
-updateFrags();
+updateKills();
+updateDeaths();
+updateKd();
 updateDays();
 
 setInterval(function() {
@@ -20,14 +22,24 @@ setInterval(function() {
 
 function updateBotNum() {
    var currentTimeOfDay = new Date().getHours();
-   frags =  botNum = AVG_BOT_NUM + 3 * ((currentTimeOfDay % 4) - 2);
-   botNumElement.textContent = frags;
+   var botNum =  botNum = AVG_BOT_NUM + 3 * ((currentTimeOfDay % 4) - 2);
+   botNumElement.textContent = botNum;
 }
 
-function updateFrags() {
+function updateKills() {
    var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
-   frags = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
-   fragsElement.textContent = frags.toFixed(2);
+   var kills = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
+   killsElement.textContent = kills.toFixed(2);
+}
+
+function updateDeaths() {
+   var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
+   var deaths = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM / AVG_KD;
+   fragsElement.textContent = deaths.toFixed(2);
+}
+
+function updateKd() {
+   fragsElement.textContent = AVG_KD.toFixed(2);
 }
 
 function updateDays() {
