@@ -31,8 +31,8 @@ function updateFrags() {
 }
 
 function updateDays() {
-   var daysSinceRelease = daysDiff(Date.now(), releaseDate);
-   daysElement.textContent = daysSinceRelease;
+   var daysSinceRelease =  (Date.now() - releaseDate) / 24 / 60 / 60 / 1000;
+   daysElement.textContent = daysSinceRelease.toFixed(2);
 }
 
 
