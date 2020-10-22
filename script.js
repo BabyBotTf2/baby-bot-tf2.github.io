@@ -36,11 +36,11 @@ function updateKills() {
 function updateDeaths() {
    var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
    var deaths = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM / AVG_KD;
-   fragsElement.textContent = deaths.toFixed(0);
+   deathsElement.textContent = deaths.toFixed(0);
 }
 
 function updateKd() {
-   fragsElement.textContent = AVG_KD.toFixed(2);
+   kdElement.textContent = AVG_KD.toFixed(2);
 }
 
 function updateDays() {
