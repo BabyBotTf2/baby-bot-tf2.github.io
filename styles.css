@@ -71,7 +71,6 @@ body {
     width: 30vh;
     height: 21.48vh;
     position: absolute;
-    margin: 13% 44%;
     filter: hue-rotate(133deg) brightness(0.8) contrast(3) saturate(2);
     animation: grow-shrink 10s;
 }
