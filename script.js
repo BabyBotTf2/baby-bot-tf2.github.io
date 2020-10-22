@@ -1,7 +1,7 @@
 var KILL_RATE = 71; // per hour
 var AVG_BOT_NUM = 64;
 var AVG_KD = 1.634342;
-var releaseDate = new Date(2020, 9, 22, 12, 0, 0, 0);
+var releaseDate = new Date(2020, 9, 21, 22, 0, 0, 0);
 
 var botNumElement = document.getElementById('bot-num');
 var killsElement = document.getElementById('kills');
@@ -28,13 +28,13 @@ function updateBotNum() {
 }
 
 function updateKills() {
-   var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
+   var hoursSinceRelease = (Date.now() - releaseDate) / 60 / 60 / 1000;
    var kills = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
    killsElement.textContent = kills.toFixed(0);
 }
 
 function updateDeaths() {
-   var hoursSinceRelease = (releaseDate - Date.now()) / 60 / 60 / 1000;
+   var hoursSinceRelease = (Date.now() - releaseDate) / 60 / 60 / 1000;
    var deaths = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM / AVG_KD;
    deathsElement.textContent = deaths.toFixed(0);
 }
