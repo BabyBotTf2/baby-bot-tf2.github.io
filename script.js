@@ -49,7 +49,7 @@ function updateDays() {
 
 
 function repeatedlyUpdateKills()  {
-    var killDelay = 2 + Math.random();
+    var killDelay = (2 + Math.random()) * 1000;
     setTimeout(function() {
       updateKills();
       repeatedlyUpdateKills();
@@ -57,7 +57,7 @@ function repeatedlyUpdateKills()  {
 }
 
 function repeatedlyUpdateDeaths()  {
-    var deathDelay = 2 + Math.random();
+    var deathDelay = (2 + Math.random()) * 1000;
     setTimeout(function() {
       updateDeaths();
       repeatedlyUpdateDeaths();
