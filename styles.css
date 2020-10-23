@@ -76,29 +76,30 @@ body {
 }
 
 .git {
-    position: absolute;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Font_Awesome_5_brands_github-square.svg/512px-Font_Awesome_5_brands_github-square.svg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 2;
-    width: 70px;
-    right: 15px;
     bottom: 15px;
     height: 75px;
-    filter: invert(1);
-    opacity: 0.7;
 }
 
 .twitter {
-    position: absolute;
     background-image: url(https://www.flaticon.com/svg/static/icons/svg/60/60580.svg);
+    bottom: 100px;
+    height: 70px;
+}
+
+.youtube {
+    background-image: url(https://www.flaticon.com/svg/static/icons/svg/60/60580.svg);
+    bottom: 180px;
+    height: 70px;
+}
+
+.tile {
+    position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70px;
     right: 15px;
-    bottom: 100px;
-    height: 70px;
     filter: invert(1);
     opacity: 0.7;
 }
