@@ -1,6 +1,6 @@
-var KILL_RATE = 19; // per hour
+var KILL_RATE = 9; // 1 bot per hour
 var AVG_BOT_NUM = 64;
-var AVG_KD = 0.09;
+var AVG_KD = 0.11;
 var releaseDate = new Date(2020, 9, 21, 22, 0, 0, 0);
 
 var botNumElement = document.getElementById('bot-num');
