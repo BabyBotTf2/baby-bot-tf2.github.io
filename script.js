@@ -1,6 +1,6 @@
-var KILL_RATE = 71; // per hour
+var KILL_RATE = 19; // per hour
 var AVG_BOT_NUM = 64;
-var AVG_KD = 0.14325;
+var AVG_KD = 0.09;
 var releaseDate = new Date(2020, 9, 21, 22, 0, 0, 0);
 
 var botNumElement = document.getElementById('bot-num');
@@ -53,7 +53,7 @@ function repeatedlyUpdateBotNum()  {
 }
 
 function repeatedlyUpdateKillsDeaths()  {
-    var killDelay = (2 + Math.random()) * 1000;
+    var killDelay = (4 + Math.random()) * 2000;
     setTimeout(function() {
       updateKills();
       updateDeaths();
