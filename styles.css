@@ -91,14 +91,14 @@ body {
 
 .twitter {
     position: absolute;
-    background-image: url(https://cdns.iconmonstr.com/wp-content/assets/preview/2012/240/iconmonstr-twitter-1.png);
+    background-image: url(https://www.flaticon.com/svg/static/icons/svg/60/60580.svg);
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 2;
     width: 70px;
     right: 15px;
     bottom: 90px;
-    height: 75px;
+    height: 70px;
     filter: invert(1);
     opacity: 0.7;
 }
