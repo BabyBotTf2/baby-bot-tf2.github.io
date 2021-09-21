@@ -28,13 +28,13 @@ function updateBotNum() {
 function updateKills() {
    var hoursSinceRelease = (Date.now() - releaseDate) / 60 / 60 / 1000;
    var kills = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM;
-   killsElement.textContent = kills.toFixed(0);
+   killsElement.textContent = numberWithCommas(kills.toFixed(0));
 }
 
 function updateDeaths() {
    var hoursSinceRelease = (Date.now() - releaseDate) / 60 / 60 / 1000;
    var deaths = hoursSinceRelease * KILL_RATE * AVG_BOT_NUM / AVG_KD;
-   deathsElement.textContent = deaths.toFixed(0);
+   deathsElement.textContent = numberWithCommas(deaths.toFixed(0));
 }
 
 function updateKd() {
@@ -43,7 +43,7 @@ function updateKd() {
 
 function updateDays() {
    var daysSinceRelease =  (Date.now() - releaseDate) / 24 / 60 / 60 / 1000;
-   daysElement.textContent = daysSinceRelease.toFixed(2);
+   daysElement.textContent = numberWithCommas(daysSinceRelease.toFixed(2));
 }
 
 function repeatedlyUpdateBotNum()  {
@@ -64,24 +64,32 @@ function repeatedlyUpdateKillsDeaths()  {
 
 function secondsDiff(d1, d2) {
    let millisecondDiff = d2 - d1;
-   let secDiff = Math.floor( ( d2 - d1) / 1000 );
+   let secDiff = Math.floor(( d2 - d1) / 1000);
    return secDiff;
 }
 
 function minutesDiff(d1, d2) {
      let seconds = secondsDiff(d1, d2);
-     let minutesDiff = Math.floor( seconds / 60 );
+     let minutesDiff = Math.floor(seconds / 60);
      return minutesDiff;
 }
 
 function hoursDiff(d1, d2) {
    let minutes = minutesDiff(d1, d2);
-   let hoursDiff = Math.floor( minutes / 60 );
+   let hoursDiff = Math.floor(minutes / 60);
    return hoursDiff;
 }
 
 function daysDiff(d1, d2) {
    let hours = hoursDiff(d1, d2);
-   let daysDiff = Math.floor( hours / 24 );
+   let daysDiff = Math.floor(hours / 24);
    return daysDiff;
+}
+
+function numberWithCommas(x) {
+    x = x.toString();
+    var pattern = /(-?\d+)(\d{3})/;
+    while (pattern.test(x))
+        x = x.replace(pattern, '$1,$2');
+    return x;
 }
